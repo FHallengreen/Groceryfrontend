@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery Delivery System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styling.css" />
+  </head>
+  <body>
+    <div class="container-fluid pt-4">
+      <h1 class="text-center mb-5">Grocery Delivery System</h1>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h2>Add Product</h2>
+              <form id="addProductForm" class="mb-4">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="productName"
+                    placeholder="Product Name"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="productPrice"
+                    placeholder="Product Price"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="productWeight"
+                    placeholder="Product Weight"
+                    class="form-control"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Add Product
+                </button>
+              </form>
+
+              <h2>List of Products</h2>
+              <div id="productList" class="mb-4">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-rows"></tbody>
+                </table>
+              </div>
+              <h2>Find Product</h2>
+              <form id="findProductForm" class="mb-4">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="findProductByName"
+                    required
+                    placeholder="Product Name"
+                    class="form-control"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Find Product
+                </button>
+              </form>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Weight</th>
+                  </tr>
+                </thead>
+                <tbody id="table-rows2"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h2>Create Delivery</h2>
+              <form id="createDeliveryForm" class="mb-4">
+                <div class="form-group">
+                  <label for="deliveryDate">Delivery Date</label>
+                  <input
+                    type="date"
+                    id="deliveryDate"
+                    class="form-control"
+                    placeholder="Delivery Date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="fromWarehouse">From Warehouse</label>
+                  <input
+                    type="text"
+                    id="fromWarehouse"
+                    class="form-control"
+                    placeholder="From Warehouse"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="destination">Destination</label>
+                  <input
+                    type="text"
+                    id="destination"
+                    class="form-control"
+                    placeholder="Destination"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Create Delivery
+                </button>
+              </form>
+
+              <h2>List of Deliveries</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>fromWarehouse</th>
+                    <th>Destination</th>
+                  </tr>
+                </thead>
+                <tbody id="table-rows3"></tbody>
+              </table>
+
+              <h2>Find Delivery</h2>
+              <form id="findDeliveryForm" class="mb-4">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="findDeliveryById"
+                    required
+                    placeholder="Delivery ID"
+                    class="form-control"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Find Delivery
+                </button>
+              </form>
+              <div id="foundDelivery"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h2>Add Product Orders to Delivery</h2>
+              <form id="createProductOrderForm" class="mb-4">
+                <div class="form-group">
+                  <label for="deliveryId">Delivery ID</label>
+                  <input
+                    type="number"
+                    id="deliveryId"
+                    class="form-control"
+                    placeholder="Delivery ID"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="productId">Product ID</label>
+                  <input
+                    type="number"
+                    id="productId"
+                    class="form-control"
+                    placeholder="Product ID"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input
+                    type="number"
+                    id="quantity"
+                    class="form-control"
+                    placeholder="Quantity"
+                    required
+                  />
+                </div>
+                <button
+                  type="button"
+                  id="addProductOrder"
+                  class="btn btn-secondary"
+                >
+                  Add another product
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Submit Product Orders
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h2>List of Product Orders</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Delivery ID</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody id="table-rows4"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/products.js"></script>
+    <script type="module" src="./js/deliveries.js"></script>
+    <script type="module" src="./js/productorders.js"></script>
+  </body>
+</html>
