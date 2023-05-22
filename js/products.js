@@ -2,9 +2,9 @@ document
   .getElementById("addProductForm")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-    var name = document.getElementById("productName").value;
-    var price = document.getElementById("productPrice").value;
-    var weight = document.getElementById("productWeight").value;
+    const name = document.getElementById("productName").value;
+    const price = document.getElementById("productPrice").value;
+    const weight = document.getElementById("productWeight").value;
     const response = await fetch("http://localhost:8080/api/product/add", {
       method: "POST",
       headers: {
