@@ -31,7 +31,7 @@ async function listDeliveries() {
         const tableRowsStr = deliveries
             .map(
                 (delivery) =>
-                    `<tr><td>${delivery.date}</td><td>${delivery.warehouse}</td><td>${delivery.destination}</td></tr>`
+                    `<tr><td>${delivery.id}</td><td>${delivery.date}</td><td>${delivery.warehouse}</td><td>${delivery.destination}</td></tr>`
             )
             .join("");
         document.getElementById("table-rows3").innerHTML = tableRowsStr;

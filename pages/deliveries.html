@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery Delivery System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styling.css" />
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="../index.html">Frontpage</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./deliveries.html">Deliveries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./productorders.html">Product Orders</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <body>
+    <div class="container-fluid pt-4">
+      <h1 class="text-center mb-5">Grocery Delivery System</h1>
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h2>Create Delivery</h2>
+                <form id="createDeliveryForm" class="mb-4">
+                  <div class="form-group">
+                    <label for="deliveryDate">Delivery Date</label>
+                    <input
+                      type="date"
+                      id="deliveryDate"
+                      class="form-control"
+                      placeholder="Delivery Date"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="fromWarehouse">From Warehouse</label>
+                    <input
+                      type="text"
+                      id="fromWarehouse"
+                      class="form-control"
+                      placeholder="From Warehouse"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input
+                      type="text"
+                      id="destination"
+                      class="form-control"
+                      placeholder="Destination"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Create Delivery
+                  </button>
+                </form>
+  
+                <h2>List of Deliveries</h2>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Date</th>
+                      <th>fromWarehouse</th>
+                      <th>Destination</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-rows3"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+    </div>
+    <script type="module" src="./js/deliveries.js"></script>
+</body>
+</html>
